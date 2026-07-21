@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>English Hosts (Not Persian) with GitHub Connection - Comparison Table - Digifair</title>
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;700;900&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<style>.mono{font-family:JetBrains Mono}</style>
+</head>
+<body class="bg-[#F7F5F0] p-6">
+<div class="max-w-[1280px] mx-auto bg-white rounded-[24px] border p-6">
+  <div class="flex justify-between items-center">
+    <div><p class="font-black text-[18px]">English Hosts (Not Persian) with GitHub Connection - For Digifair.ir</p><p class="text-[11px] mono text-zinc-500">For Vercel FOR_VERCEL Node+Python dual + FOR_CLOUDFLARE Node Only + FOR_WORDPRESS - fa-IR default still works</p></div>
+    <span class="px-3 py-1 rounded-full bg-zinc-900 text-white text-[11px]">English Language • GitHub Auto Deploy</span>
+  </div>
+
+  <div class="mt-6 overflow-x-auto">
+    <table class="w-full text-[11px] text-left min-w-[1000px] border-collapse">
+      <thead class="bg-zinc-900 text-white text-[10px] mono">
+        <tr>
+          <th class="p-3 rounded-l-xl">Host (English)</th>
+          <th class="p-3">GitHub Auto Deploy?</th>
+          <th class="p-3">Node.js?</th>
+          <th class="p-3">Python?</th>
+          <th class="p-3">Dual Node+Python on One Project?</th>
+          <th class="p-3">WordPress?</th>
+          <th class="p-3">DB - Shared? No var change?</th>
+          <th class="p-3">Root for Digifair</th>
+          <th class="p-3">Free Tier</th>
+          <th class="p-3 rounded-r-xl">Score for Digifair</th>
+        </tr>
+      </thead>
+      <tbody class="divide-y">
+        <tr class="bg-emerald-50/50">
+          <td class="p-3 font-black">▲ Vercel</td>
+          <td><span class="px-2 py-1 rounded-full bg-emerald-50 text-emerald-700 border text-[10px]">✅ Yes - Git push → auto</span></td>
+          <td>✅ nodejs20.x</td>
+          <td>✅ python3.9</td>
+          <td><span class="px-2 py-1 rounded-full bg-emerald-600 text-white font-bold">✅ Yes - Both on one project - vercel.json dual</span></td>
+          <td>⚠️ Headless only (WP as CMS)</td>
+          <td>Postgres Neon - POSTGRES_URL auto - بدون تغییر متغیر - shared Node+Python</td>
+          <td class="mono">FOR_VERCEL</td>
+          <td>100GB bandwidth free</td>
+          <td><span class="px-2 py-1 rounded-full bg-zinc-900 text-white font-bold">9.5/10 🏆 Best for Digifair Node+Python</span></td>
+        </tr>
+        <tr>
+          <td class="p-3 font-black">☁️ Cloudflare Pages/Workers</td>
+          <td><span class="px-2 py-1 rounded-full bg-emerald-50 text-emerald-700 border">✅ Yes</span></td>
+          <td>✅ nodejs_compat Hono</td>
+          <td>❌ No native Python - needs proxy to Vercel</td>
+          <td>❌ Node Only</td>
+          <td>⚠️ Headless only</td>
+          <td>D1 + Hyperdrive -> same Neon Postgres Vercel - پس DB ها به هم وصله</td>
+          <td class="mono">FOR_CLOUDFLARE</td>
+          <td>Unlimited free</td>
+          <td><span class="px-2 py-1 rounded-full bg-amber-50 text-amber-700">8/10 - Fast Edge</span></td>
+        </tr>
+        <tr>
+          <td class="p-3 font-black">Netlify</td>
+          <td>✅ Yes</td>
+          <td>✅ Node</td>
+          <td>✅ Python Functions</td>
+          <td>⚠️ Separate functions</td>
+          <td>⚠️ Headless</td>
+          <td>Neon Postgres via env - shared</td>
+          <td class="mono">FOR_VERCEL (works)</td>
+          <td>100GB free</td>
+          <td>8/10</td>
+        </tr>
+        <tr>
+          <td class="p-3 font-black">Render</td>
+          <td>✅ Yes - Git push auto</td>
+          <td>✅ Node</td>
+          <td>✅ Python</td>
+          <td>⚠️ 2 services, not one project</td>
+          <td>✅ Docker WordPress</td>
+          <td>Postgres managed - shared via env</td>
+          <td class="mono">FOR_VERCEL + FOR_CLOUDFLARE</td>
+          <td>Free 750h</td>
+          <td>8.5/10</td>
+        </tr>
+        <tr>
+          <td class="p-3 font-black">Railway</td>
+          <td>✅ Yes</td>
+          <td>✅ Node</td>
+          <td>✅ Python</td>
+          <td>✅ Yes - monorepo</td>
+          <td>✅ Docker WP</td>
+          <td>Postgres plugin - shared</td>
+          <td class="mono">FOR_VERCEL</td>
+          <td>$5 free</td>
+          <td>8.5/10 - Best for Python AI</td>
+        </tr>
+        <tr>
+          <td class="p-3 font-black">Fly.io</td>
+          <td>✅ Yes via GitHub Actions</td>
+          <td>✅ Node</td>
+          <td>✅ Python</td>
+          <td>✅ Yes - Dockerfile dual</td>
+          <td>✅ Docker WP</td>
+          <td>Postgres - shared</td>
+          <td class="mono">FOR_VERCEL</td>
+          <td>Free allowance</td>
+          <td>7.5/10</td>
+        </tr>
+        <tr class="bg-violet-50/50">
+          <td class="p-3 font-black">Kinsta (for WP)</td>
+          <td>✅ Yes - Git push → WP auto deploy</td>
+          <td>❌ No - WP only</td>
+          <td>❌ No</td>
+          <td>❌ WP only</td>
+          <td><span class="px-2 py-1 rounded-full bg-violet-600 text-white">✅ Yes - Best for FOR_WORDPRESS</span></td>
+          <td>MySQL - wp-config.php default - بدون تغییر</td>
+          <td class="mono">FOR_WORDPRESS</td>
+          <td>From $35</td>
+          <td><span class="px-2 py-1 rounded-full bg-violet-600 text-white">9/10 for WP</span></td>
+        </tr>
+        <tr>
+          <td class="p-3 font-black">Cloudways</td>
+          <td>✅ Yes - Git deployment</td>
+          <td>❌ No - WP only</td>
+          <td>❌ No</td>
+          <td>❌ WP only</td>
+          <td>✅ Yes - 1-click WP</td>
+          <td>MySQL default</td>
+          <td class="mono">FOR_WORDPRESS</td>
+          <td>From $11</td>
+          <td>8.5/10 for WP cheap</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="mt-6 grid md:grid-cols-3 gap-4 text-[11px]">
+    <div class="p-4 rounded-xl bg-zinc-900 text-white"><p class="font-bold">For Digifair - Vercel vs Cloudflare - 2 main folders only</p><p class="mt-2 mono text-zinc-400">FOR_VERCEL → Node+Python dual - vercel --prod - DB بدون تغییر متغیر<br>FOR_CLOUDFLARE → Node Only (Python ندارد) - wrangler deploy - Hyperdrive به همون Postgres Vercel</p></div>
+    <div class="p-4 rounded-xl bg-white border"><p class="font-bold">GitHub Connection - All English Hosts</p><p class="mt-2">همه Host های بالا GitHub auto deploy دارن: push به main → خودکار سایت + دیتا آپدیت میشه - مثل Vercel</p></div>
+    <div class="p-4 rounded-xl bg-emerald-50 border border-emerald-200"><p class="font-bold text-emerald-800">Recommendation English - Not Persian</p><p class="mt-2">برای Digifair.ir با fa-IR پیش‌فرض ولی هاست انگلیسی: Vercel برای Node+Python اصلی، Cloudflare برای Edge سریع، Kinsta برای وردپرس FOR_WORDPRESS - هر سه GitHub auto deploy</p></div>
+  </div>
+
+  <p class="mt-6 text-[10px] mono text-zinc-500 text-center">© گواه گستر - Enamad DF-ENM-1404-8821 - English hosts table - GitHub auto deploy - fa-IR default still works - 2 main folders only</p>
+</div>
+</body>
+</html>

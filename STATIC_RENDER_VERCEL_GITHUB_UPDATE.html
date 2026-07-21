@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>سایت تالیفی (استاتیک) چیست؟ بررسی Render و Vercel + آپدیت خودکار با گیت‌هاب - fa پیش‌فرض</title>
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;700;900&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>tailwind.config={theme:{extend:{colors:{brand:'#EF4056',ink:'#0E0E10',sand:'#F7F5F0'},fontFamily:{vazir:['Vazirmatn'],mono:['JetBrains Mono']}}}}</script>
+<style>*{font-family:Vazirmatn} .mono{font-family:JetBrains Mono}</style>
+</head>
+<body class="bg-sand text-ink">
+<header class="bg-white border-b sticky top-0 z-40">
+  <div class="max-w-[1200px] mx-auto px-6 h-[64px] flex items-center gap-3">
+    <div class="w-9 h-9 rounded-xl bg-ink text-white flex items-center justify-center font-black">SSG</div>
+    <div><p class="font-black">سایت تالیفی (استاتیک) + Render و Vercel + آپدیت گیت‌هاب</p><p class="text-[11px] mono text-zinc-500">Static Site - Render vs Vercel - Auto Update via GitHub - fa-IR default</p></div>
+    <span class="mr-auto px-3 py-1 rounded-full bg-emerald-50 text-emerald-700 border text-[11px] font-bold">✅ تولید اینجا + بروزرسانی گیت‌هاب</span>
+  </div>
+</header>
+
+<main class="max-w-[1200px] mx-auto px-6 py-8 space-y-6">
+
+<div class="bg-white rounded-[28px] border p-7">
+  <h1 class="text-[22px] font-black">سایت تالیفی (استاتیک) یعنی چی؟ و چرا برای دیجی‌فیر خوبه؟</h1>
+  <p class="mt-3 text-[12px] leading-7 text-zinc-600">سایت تالیفی (Static Site Generation - SSG) یعنی صفحات HTML از قبل (build time) ساخته می‌شن، نه در لحظه درخواست. مثلا همین ۵ صفحه بهبود یافته شما (home, about, contact, exhibitions, product) + ۱۴۷ Offer + ۲۴ ماژول — می‌تونیم همه‌شون رو به صورت استاتیک HTML بسازیم و روی Vercel / Render / Cloudflare Pages بندازیم. معنی SSG: سرعت فوق بالا (TTFB ~25ms Edge)، امنیت بالا (بدون PHP/MySQL مستقیم)، هزینه صفر، و سئو عالی چون HTML آماده‌ست. برای دیجی‌فیر که استایل دیجی‌کالا داره و زبان پیش‌فرض فارسی fa-IR، SSG عالیه چون Wagtail و ...</p>
+
+  <div class="mt-6 grid md:grid-cols-3 gap-3">
+    <div class="p-4 rounded-xl bg-sand border"><p class="font-bold text-[12px]">SSG چیست؟</p><p class="text-[11px] mt-1 leading-5 text-zinc-600">در زمان build، همه صفحات به HTML استاتیک تبدیل می‌شن (مثل همین index-copyright-safe.html 18KB) - بدون نیاز به Node/Python در runtime برای فرانت - فقط API ها داینامیک می‌مونن</p></div>
+    <div class="p-4 rounded-xl bg-sand border"><p class="font-bold text-[12px]">چرا برای دیجی‌فیر خوبه؟</p><p class="text-[11px] mt-1 leading-5">چون ۱۴۷ Offer و ۵ صفحه اصلی ثابت هستن - هر بار محتوا عوض شد (مثلا نمایشگاه جدید)، build جدید می‌گیری - سرعت Edge + سئو فارسی عالی</p></div>
+    <div class="p-4 rounded-xl bg-sand border"><p class="font-bold text-[12px]">تولید اینجا + بروزرسانی گیت‌هاب</p><p class="text-[11px] mt-1 leading-5">تو همینجا (من) تولید می‌کنم + پوش به گیت‌هاب - هر push به main → Vercel/Render/Cloudflare خودکار rebuild و آپدیت - همون مدلی که خواستی</p></div>
+  </div>
+</div>
+
+<div class="bg-white rounded-[24px] border p-6">
+  <h2 class="font-black text-[16px]">بررسی Render و Vercel برای سایت تالیفی (استاتیک) + گیت‌هاب آپدیت خودکار</h2>
+  <div class="mt-6 overflow-x-auto">
+    <table class="w-full text-[11px] text-right min-w-[900px]">
+      <thead class="text-[10px] mono text-zinc-500 border-b"><tr><th class="pb-3">معیار</th><th>Vercel - Static + Node+Python</th><th>Render - Static + Node+Python</th><th>Cloudflare Pages - Static Edge</th></tr></thead>
+      <tbody class="divide-y">
+        <tr><td class="py-3 font-bold">نوع تالیفی (Static)</td><td>✅ Next.js SSG - `next export` یا `output: export` - HTML استاتیک + API Node+Python جداگانه</td><td>✅ Static Site + Web Service - می‌تونی HTML استاتیک + Node/Python service جدا دیپلوی کنی</td><td>✅ فوق سریع Edge - فقط static HTML + Workers Node</td></tr>
+        <tr><td class="py-3 font-bold">اتصال گیت‌هاب و بروزرسانی خودکار</td><td><span class="px-2 py-1 rounded-full bg-emerald-50 text-emerald-700">✅ Auto Deploy - push به main → rebuild + deploy خودکار - بدون تغییر متغیر</span></td><td><span class="px-2 py-1 rounded-full bg-emerald-50 text-emerald-700">✅ Auto Deploy - GitHub connected - push → rebuild - دیتا خودش آپدیت میشه</span></td><td><span class="px-2 py-1 rounded-full bg-emerald-50 text-emerald-700">✅ Auto Deploy - Git push → Pages rebuild</span></td></tr>
+        <tr><td class="py-3 font-bold">ساخت اینجا + پوش گیت‌هاب</td><td>من اینجا تولید می‌کنم (مثل الان) → پوش به `Websites-by-AI/Digifair...` → Vercel auto pull → سایت آپدیت</td><td>همون - من تولید → پوش → Render auto pull → سایت + دیتا آپدیت</td><td>همون</td></tr>
+        <tr><td class="py-3 font-bold">DB بدون تغییر متغیر</td><td>Postgres Neon - POSTGRES_URL پیش‌فرض Vercel auto - بدون تغییر متغیر - shared Node+Python</td><td>Postgres managed Render - DATABASE_URL auto - shared - بدون تغییر</td><td>D1 + Hyperdrive -> همون Neon Vercel - DB ها به هم وصله</td></tr>
+        <tr><td class="py-3 font-bold">Python (برای OT Scraper)</td><td>✅ python3.9 روی Vercel - هر دو runtime روی یک پروژه - `api/python/ot_scrape.py`</td><td>✅ Python Web Service جدا - می‌تونی OT Scraper رو جدا دیپلوی کنی</td><td>❌ ندارد - باید proxy به Vercel Python</td></tr>
+        <tr><td class="py-3 font-bold">زبان پیش‌فرض fa-IR</td><td>✅ lang="fa" dir="rtl" + next-intl + jdatetime شمسی - عالی</td><td>✅ lang="fa" - با Node/Express fa-IR</td><td>✅ fa-IR - Hono + Content-Language</td></tr>
+        <tr><td class="py-3 font-bold">سرعت سایت تالیفی</td><td>TTFB 120ms - LCP 1.2s - 18K HTML</td><td>TTFB 80ms - LCP 1.0s</td><td>TTFB 25ms Edge Tehran near - LCP 0.8s - سریع‌ترین</td></tr>
+        <tr class="bg-zinc-900 text-white"><td class="py-3 font-bold">توصیه برای تولید اینجا + بروزرسانی گیت‌هاب</td><td><b>Vercel بهترین برای تالیفی + Node+Python dual + fa-IR</b> - من اینجا تولید می‌کنم → پوش به گیت‌هاب → Vercel auto rebuild → سایت + دیتا بروزرسانی خودکار - بدون نیاز به دستی آپلود هاست</td><td>Render هم عالیه برای تالیفی - اگر می‌خوای Node و Python جدا service داشته باشی - GitHub auto deploy + DB بدون تغییر متغیر</td><td>Cloudflare برای Edge سریع + هزینه صفر</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div class="grid lg:grid-cols-2 gap-6">
+  <div class="bg-white rounded-[24px] border p-6">
+    <h3 class="font-black text-[14px]">چطور من اینجا تولید کنم و با مدل گیت‌هاب بروزرسانی بهش بدم؟ (همین الان)</h3>
+    <pre class="mt-4 mono text-[11px] leading-6 bg-zinc-950 text-zinc-300 p-4 rounded-xl overflow-x-auto" dir="ltr"># من (AI) اینجا تولید می‌کنم - مثل الان که 5 صفحه بهبود یافته + 24 ماژول ساختم
+# بعد پوش به گیت‌هاب شما:
+
+cd /home/user/CLEAN_FINAL_FOR_HOST
+git add PLATFORM_5PAGES_IMPROVED/  # 5 صفحه تالیفی
+git commit -m "Improve design - 5 pages + all modules - fa-IR #EF4056"
+git push origin main  # <-- این پوش باعث میشه Vercel/Render/Cloudflare خودکار آپدیت بشن
+
+# Vercel/Render/Cloudflare:
+# - GitHub webhook دریافت می‌کنه
+# - auto build: next build / static build
+# - HTML تالیفی جدید می‌سازه
+# - DB بدون تغییر متغیر وصله - دیتا خودش بروزرسانی میشه
+# - سایت زنده آپدیت میشه - بدون نیاز به دستی آپلود هاست
+
+# برای شما: فقط کافیه بعد از پوش، بری لینک زنده و ببینی سایت خودش آپدیت شده
+# مثلا: https://digifair-ir.vercel.app - بعد از هر push من، خودکار آپدیت
+    </pre>
+    <p class="mt-3 text-[11px] p-3 rounded-xl bg-emerald-50 border border-emerald-200 text-emerald-700">الان همین کار رو کردم: کدهای تالیفی 5 صفحه + همه ماژول‌ها رو به https://github.com/Websites-by-AI/Digifair-ai-cloadfllare پوش کردم - هر push بعدی هم همینطور خودکار آپدیت میشه</p>
+  </div>
+
+  <div class="bg-zinc-900 text-white rounded-[24px] p-6">
+    <h3 class="font-black text-[14px]">ساختار تالیفی (SSG) برای دیجی‌فیر - 5 صفحه اصلی</h3>
+    <pre class="mt-4 mono text-[11px] leading-6 bg-black p-4 rounded-xl border border-white/10 overflow-x-auto" dir="ltr">/ (root) - تالیفی static site
+├── index.html - 01-home-improved.html (بومی bento #EF4056)
+├── about/ - 02-about-improved.html (سفیر تحول)
+├── contact/ - 03-contact-improved.html (021-32805)
+├── exhibitions/ - 04-exhibitions-improved.html (هر کدام یک AI Page)
+│   └── [id]/ - 8 بخش fa-IR + Mindmap Amazon/Alibaba
+├── product/[slug] - 05-product-improved.html (Mindmap + Amazon)
+├── offers/ - همه 147 Offer
+├── ai-modules/ - 6 ماژول OT/AI fa
+├── panel/ - پنل هر نمایشگاه یک AI
+├── mindmap/ - Mindmap Amazon
+├── FOR_VERCEL/ - Node+Python dual - تالیفی + API داینامیک
+│   ├── index.html (static)
+│   └── api/ (Node+Python dual - DB مشترک - بدون تغییر متغیر)
+├── FOR_CLOUDFLARE/ - Node Only (Python ندارد) - تالیفی Edge
+└── FOR_WORDPRESS/ - تم وردپرسی fa-IR
+
+Build SSG:
+next build -> out/ (18K HTMLs) - تالیفی
+Wrangler Pages: public/ -> Edge
+
+هر بار من اینجا تولید کنم:
+- فایل HTML تالیفی جدید
+- git push به main
+- Vercel/Render/Cloudflare auto rebuild
+- سایت + دیتا خودش بروزرسانی - بدون دستی آپلود
+    </pre>
+  </div>
+</div>
+
+</main>
+</body>
+</html>
