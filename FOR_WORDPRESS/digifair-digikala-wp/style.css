@@ -1,0 +1,28 @@
+/*
+Theme Name: Digifair Digikala - Exhibition Marketplace - fa-IR
+Theme URI: https://digifair.ir
+Author: Goah Gostar Jahan-Nama - دیجی‌فیر
+Author URI: https://digifair.ir
+Description: مدل دیجی‌کالای نمایشگاهی برای افراد و غرفه‌داران - نسخه وردپرسی کامل - 5 صفحه اصلی + 24 ماژول (14 اصلی + 4 digifair.com + 6 AI/OT) - زبان پیش‌فرض فارسی fa-IR RTL - رنگ مشابه #EF4056 کپی‌رایت سیف (bento + pill header) - ووکامرس + نمایشگاه + پنل AI هر نمایشگاه + Mindmap Amazon/Alibaba + Content Studio 12 مهارت + Enamad پایین راست
+Version: 2.1.0
+License: Proprietary - © گواه گستر جهان‌نما - DF-ENM-1404-8821
+License URI: https://digifair.ir/terms
+Text Domain: digifair-fa
+Domain Path: /languages
+Tags: digikala, exhibition, booth, fa-IR, rtl, marketplace, ai, ot
+Requires at least: 6.0
+Tested up to: 6.6
+Requires PHP: 8.1
+*/
+
+/* Vazirmatn + Brand #EF4056 like Digikala */
+:root {
+  --brand: #EF4056;
+  --brand-dark: #D12E44;
+  --ink: #0E0E10;
+  --sand: #F7F5F0;
+  --line: #EAE6E0;
+  --radius: 24px;
+}
+body { font-family: Vazirmatn, Tahoma, sans-serif; background: var(--sand); color: var(--ink); }
+.font-vazir { font-family: Vazirmatn; }

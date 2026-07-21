@@ -1,0 +1,22 @@
+{
+  "version": 2,
+  "builds": [
+    { "src": "api/*.js", "use": "@vercel/node" },
+    { "src": "api/python/*.py", "use": "@vercel/python" }
+  ],
+  "routes": [
+    { "src": "/api/python/(.*)", "dest": "/api/python/$1" },
+    { "src": "/api/(.*)", "dest": "/api/$1" },
+    { "src": "/(.*)", "dest": "/index.html" }
+  ],
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        { "key": "Content-Language", "value": "fa-IR" },
+        { "key": "X-Default-Lang", "value": "fa-IR" },
+        { "key": "X-Deployment", "value": "vercel-basic-landing-node-python-fa" }
+      ]
+    }
+  ]
+}
